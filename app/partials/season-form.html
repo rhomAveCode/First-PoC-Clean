@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <form>
+                <p><label>Id:</label> <input type="text" id="seasonId" name="season._id" ng-model="season._id" /></p>
+                <p><label>Assortment Season:</label> <input type="text" id="seasonAssortment" name="season.FRCH_SEAS_NM" ng-model="season.FRCH_SEAS_NM" /></p>
+                <p><label>Corp/Company:</label> <input type="text" id="seasonCorp" name="season.CORP_ID" ng-model="season.CORP_ID" /></p>
+                <p><label>Order Start Date:</label> <input type="text" id="seasonOrderDate" name="season.ORD_PERD_STRT_DT" ng-model="season.ORD_PERD_STRT_DT" /></p>
+                <p><label>Order End Date:</label> <input type="text" id="seasonOrderEndDate" name="season.ORD_PERD_END_DT" ng-model="season.ORD_PERD_END_DT" /></p>
+                <p>
+                    <button ng-click="cancel()">Cancel</button>
+                    <button ng-click="save()" id="saveSeason">Save</button>
+                </p>
+            </form>
+
+            <!--
+            <hr/>
+            Debug View:
+            <pre>form={{form}} <br>
+            assortmentSeason={{season.FRCH_SEAS_NM}} <br> corpCompany={{season.CORP_ID}} <br>
+            orderStartDate={{season.ORD_PERD_STRT_DT}} <br> orderEndDate={{season.ORD_PERD_END_DT}}  </pre>
+            -->
+        </div>
+    </div>
+</div>

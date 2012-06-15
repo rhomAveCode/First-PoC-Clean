@@ -1,0 +1,99 @@
+<div class="container">
+  <div class="row">
+    <div class="span3" id="menu">
+      <!--Menu content-->
+
+	  <ul class="menu" id="sbM1">
+        <li><a href="#">Assortment Planning</a></li>
+        <li><a href="#">Manage Assortment</a></li>
+        <li><a href="#">Manage ACT Change Log</a></li>
+        <li><a href="#">Manage Assortment Pricing</a></li>
+        <li><a href="#">Define Size Offering</a></li>
+        <li><a href="#">Create Custumer Order Form</a></li>
+      </ul>
+      <ul class="menu" id="sbM2">
+        <li><a href="#">Sales Planning</a></li>
+      </ul>
+      <ul class="menu" id="sbM3">
+        <li><a href="#">Order Management</a></li>
+      </ul>
+      <ul class="menu" id="sbM4">
+        <li><a href="#">Setup Tools</a></li>
+        <li><a href="#">Size Model Mapping</a></li>
+        <li><a href="#">Department Mapping</a></li>
+        <li style="font-weight: bold;"><a href="#">Assortment Season Setup</a></li>
+        <li><a href="#">Custumer Profile Management</a></li>
+      </ul>
+
+    </div>
+    <div class="span9">
+      <!--Filters content-->
+
+	  <h3>Season Setup</h3>
+	  <br />
+	  <p>To add a new season, click Add. To search for an existing season, choose a company and click Search. To view/edit season
+	  	data including ship-to locations, click click on the season name. To delete a season, click on Delete for the season</p>
+	  
+	  Company:
+	  <select ng-model="query" id="companyFilter">
+        <option value="">All</option>
+        <option value="GAP">1 - GAP</option>
+        <option value="BANANA REPUBLIC">2 - Banana Republic</option>
+        <option value="OLD NAVY">3 - Old Navy</option>
+      </select>
+      <br /><br />
+
+      <!-- using angular this button is useless
+      <button>Search</button>
+      <br /><br />
+        -->
+	  
+	  <div style="background-color: blue;">
+	  	<button style="float:right;" ng-click="add()" id="addSeason">Add</button>
+	  </div>
+	  <br /><br />
+	  
+      <!-- Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="assortmentSeason">Assortment Season</option>
+        <option value="corpCompany">Corp/Company</option>
+        <option value="orderStartDate">Order Start Date</option>
+        <option value="orderEndDate">Order End Date</option>
+      </select> -->
+
+    </div>
+    <!-- <div class="span9">
+      <!--Breadcrumbs content--
+
+      This is a good place to breadcrumbs
+
+    </div> -->
+    <div class="span9">
+      <!--Table content-->
+	  
+	  <table class="phones" border="1" cellspacing="5" cellpadding="5" id="showSeason">
+		  <tr>
+		  	<th><a ng-click="orderProp = 'FRCH_SEAS_NM';reverse=!reverse">Assortment Season</a></th>
+		  	<th><a ng-click="orderProp = 'CORP_ID';reverse=!reverse">Corp/Company</a></th>
+		  	<th><a ng-click="orderProp = 'ORD_PERD_STRT_DT';reverse=!reverse">Order Start Date</a></th>
+		  	<th><a ng-click="orderProp = 'ORD_PERD_END_DT';reverse=!reverse">Order End Date</a></th>
+		  	<th>Click on Action Below:</th>
+		  </tr>
+		  <tr ng-repeat="season in seasons | filter:query | orderBy:orderProp:reverse">
+	        <td><a href="#/seasons/{{season.FRCH_SEAS_NM}}">{{season.FRCH_SEAS_NM}}</a></td>
+	        <td>{{season.CORP_ID}}</td>
+	        <td>{{season.ORD_PERD_STRT_DT}}</td>
+		  	<td>{{season.ORD_PERD_END_DT}}</td>
+		  	<td><a ng-click="remove(season)">Delete</a></td>
+		  </tr>
+	  </table>
+    </div>
+    <div class="span3">&nbsp;</div>
+    <div class="span9">
+      <div style="background-color: blue;">
+	  	<button style="float:right;" ng-click="add()">Add</button>
+	  </div>
+    </div>
+  </div>
+</div>
